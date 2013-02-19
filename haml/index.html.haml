@@ -1,0 +1,33 @@
+-# encoding: utf-8
+!!! 5
+%html{:lang => "zh-TW"}
+	%head
+		%meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+		%meta(name = "keywords" content = "switcher jquery")
+		%meta{'name' => 'description', :content => 'switcher jquery plugin'}
+		%meta{'name' => 'viewport'   , :content => 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'}	
+		%meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=Edge'}
+		
+		%title Switcher jQuery plugn-in
+		
+		%link{:href => "assets/css/index.css", :rel => "stylesheet", :type => "text/css"}
+		%link{:href => "assets/css/jq.switcher.css", :rel => "stylesheet", :type => "text/css"}
+	%body
+		
+		.container
+			%input{:name => "", :type =>"switch", :value => "1" }
+
+		.contact
+			Contact: visioncan[at]gmail.com
+
+		-#js jquery
+		%script{:src  => "//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"}
+		:javascript
+			window.jQuery || document.write('<script src="assets/js/jquery-1.7.min.js"><\/script>');
+		-#js plugin
+		%script{:src => "assets/js/jq.switcher.js"}
+		:javascript
+			function init() {
+				$.toggleSwitcher();
+			}
+			$(document).ready(init);

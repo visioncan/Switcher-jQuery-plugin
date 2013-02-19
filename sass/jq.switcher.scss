@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@import "compass/css3";
+
+$experimental-support-for-khtml: false;
+$experimental-support-for-microsoft: false;
+$support-for-original-webkit-gradients:false;
+
+input[type="switch"]{
+	display: none;
+}
+
+.switches{ 
+	position:relative;
+	height:23px;
+	font-size:12px;
+	width:72px;
+	float:left;
+	cursor:pointer;
+	overflow:hidden;
+	span{
+		display:block;
+	}
+	.bg,
+	.lf,
+	.rt{
+		background:inline-image("../img/switcher.png");
+		*background-image:url("../img/switch.png");
+	}
+	.lf,
+	.rt{ position:absolute; width:50%; height:23px; top:0; bottom:0; width:3px; z-index:2; }
+
+	.lf{ left:0; background-position:-1px -1px;}
+	.rt{ right:0; background-position:-196px -1px; }
+	
+	.bg{ position:relative; z-index:1; background-position:center -25px; height:23px; width:114px; line-height:23px; left:0px;}
+	.bg span{ width:42px; text-align:center; white-space:nowrap; font-style:normal; font-weight:normal; }
+	.on{ float:left; color:#FFF; text-shadow:0 1px 1px #013970; }
+	.off{ float:right; color:#777; text-shadow:0 1px 1px #FFF; }
+
+}
+
+
+
