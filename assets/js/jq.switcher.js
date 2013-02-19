@@ -14,7 +14,7 @@
 */
 (function($){
 	var defaults = {
-		callback  : null,
+		callback  : function(val, switcher){},
 		statclass : ["off", "on"],
 		label     : ["OFF", "ON"]
 	};
@@ -41,18 +41,14 @@
 			BG.stop().animate({ left: -42} , 180 , function(){
 				Input.val(0);
 				Switcher.removeClass("on").addClass("off");
-				if( options.callback ){
-					options.callback(0, Switcher);
-				}
+				options.callback(0, Switcher);
 				Switcher = BG = Input = null;
 			});
 		}else{
 			BG.stop().animate({ left: 0} , 180 , function(){
 				Input.val(1);
 				Switcher.removeClass("off").addClass("on");
-				if( options.callback ){
-					options.callback(1, Switcher);
-				}
+				options.callback(1, Switcher);
 				Switcher = BG = Input = null;
 			});
 		}
