@@ -19,7 +19,6 @@
 		label     : ["OFF", "ON"]
 	};
 	$.toggleSwitcher = function(opt){
-		//$.log( $("input[type=switch]") );
 		var options = $.extend({}, defaults, opt);
 		$("input[type='switch']").each(function(i, n){
 			creatElement(n, options);
@@ -28,13 +27,12 @@
 	
 	$.fn.toggleSwitcher = function(opt){
 		var options = $.extend({}, defaults, opt);
-		creatElement(this.get(0), options);
+		return this.each(function(){
+			creatElement(this, options);
+		});
 	};
 	
 	function switchHandler(e){
-		/*var Switcher = e.currentTarget,
-			BG       = e.currentTarget.getElementsByClassName("bg"),
-			Input    = e.currentTarget.children[0]*/
 		var options  = $(this).data("opt");
 		var Switcher = $(this),
 			BG       = $(this).children(".bg"),

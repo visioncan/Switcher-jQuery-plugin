@@ -16,6 +16,16 @@
 		
 		.container
 			%input{:name => "", :type =>"switch", :value => "1" }
+	
+		#tmp
+			%input{:name => "", :type =>"switch", :value => "1" }
+			%input{:name => "", :type =>"switch", :value => "1" }
+			%input{:name => "", :type =>"switch", :value => "1" }
+		
+		#tmp2
+			%input{:name => "", :type =>"switch", :value => "1" }
+			%input{:name => "", :type =>"switch", :value => "1" }
+			%input{:name => "", :type =>"switch", :value => "1" }
 
 		.contact
 			Contact: visioncan[at]gmail.com
@@ -28,6 +38,7 @@
 		%script{:src => "assets/js/jq.switcher.js"}
 		:javascript
 			function init() {
-				$.toggleSwitcher();
+				// $.toggleSwitcher();
+				$("#tmp input[type='switch']").toggleSwitcher();
 			}
 			$(document).ready(init);
