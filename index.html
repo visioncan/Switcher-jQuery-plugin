@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="switcher jquery" name="keywords">
+    <meta content="switcher jquery plugin" name="description">
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <title>Switcher jQuery plugn-in</title>
+    <link href="assets/css/index.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jq.switcher.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+      <input name="" type="switch" value="1">
+    </div>
+    <div class="contact">
+      Contact: visioncan[at]gmail.com
+    </div>
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+    <script>
+      //<![CDATA[
+        window.jQuery || document.write('<script src="assets/js/jquery-1.7.min.js"><\/script>');
+      //]]>
+    </script>
+    <script src="assets/js/jq.switcher.js"></script>
+    <script>
+      //<![CDATA[
+        function init() {
+        	$.toggleSwitcher();
+        }
+        $(document).ready(init);
+      //]]>
+    </script>
+  </body>
+</html>
