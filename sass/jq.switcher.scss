@@ -2,7 +2,7 @@
 @import "compass/css3";
 
 $experimental-support-for-khtml: false;
-$experimental-support-for-microsoft: false;
+// $experimental-support-for-microsoft: false;
 $support-for-original-webkit-gradients:false;
 
 input[type="switch"]{
@@ -36,7 +36,57 @@ input[type="switch"]{
 	.bg span{ width:42px; text-align:center; white-space:nowrap; font-style:normal; font-weight:normal; }
 	.on{ float:left; color:#FFF; text-shadow:0 1px 1px #013970; }
 	.off{ float:right; color:#777; text-shadow:0 1px 1px #FFF; }
+}
 
+
+
+$height: 40px;
+$width: 90px;
+$switch-size: 30px;
+$switch-border-width: 1px;
+$radius: 2em;
+
+
+.jqswitcher{
+	top: 80px; left: 90px;
+	position: relative;
+	width: $width;
+	height: $height;
+	.label{
+		width: 100%;
+		overflow: hidden;
+		cursor: pointer;
+		@include border-radius($radius);
+	}
+	.bg{
+		width: 200%;
+		margin-left: 0%;
+		@include transition(margin .2s);
+		div{
+			line-height: $height;
+			display: block;
+			width: 50%;
+			text-align: center;
+			float: left;
+		}
+		.on{
+			background-color: blue;
+		}
+		.off{
+			background-color: gray;
+		}
+	}
+	.switch{
+		width: $switch-size;
+		height: $switch-size;
+		background-color: #CCC;
+		border: $switch-border-width solid #999;
+		@include border-radius($radius);
+		position: absolute;
+		top: 50%;
+		left: (($height - $switch-size) / 2);
+		margin-top: -($switch-size / 2 + $switch-border-width);
+	}
 }
 
 
